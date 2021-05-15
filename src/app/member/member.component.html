@@ -8,7 +8,7 @@
                             <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="memberService.selectedMember._id">
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <input type="text" name="name" #name="ngModel" [(ngModel)]="memberService.selectedMember.name" placeholder="Enter Name Here">
+                                    <input type="text" name="name" #name="ngModel" [(ngModel)]="memberService.selectedMember.name" placeholder="Enter Name Here" required>
                                     <label >Name: 
                                         <label class="red-text">*</label>
                                     </label>
@@ -36,6 +36,12 @@
                                     <label >Votes: 
                                         <label class="red-text">*</label>
                                     </label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <button class="btn btn-custom right" type="button" (click)="resetForm(memberForm)">Reset</button>
+                                    <button class="btn btn-custom right" type="submit" [disabled]="!memberForm.valid">Submit</button>
                                 </div>
                             </div>
                         </form>

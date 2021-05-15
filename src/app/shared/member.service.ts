@@ -12,6 +12,11 @@ import { Member } from './member.model';
 export class MemberService {
   selectedMember: Member = new Member;
   members: Member[] = [];
+  readonly baseURL = 'http://127.0.0.1:3000/tjmembers'
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
+
+  postMember(mem:Member){
+    return this.http.post(this.baseURL, mem);
+  }
 }
